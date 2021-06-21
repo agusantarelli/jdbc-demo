@@ -24,6 +24,7 @@ public class Demo {
             PreparedStatementInsert.with(connection).execute();
             SuccessfulTransaction.with(connection).execute();
             RollbackTransaction.with(connection).execute();
+            close(connection);
         });
     }
 
@@ -32,7 +33,6 @@ public class Demo {
             log.info("Creating DB connection");
 
             final Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-            connection.setAutoCommit(Boolean.FALSE);
 
             log.info("DB connection created successfully");
 
@@ -40,6 +40,15 @@ public class Demo {
         } catch (SQLException e) {
             log.error("Error creating connection: {}", e.getLocalizedMessage());
             return Optional.empty();
+        }
+    }
+
+    private static void close(Connection connection) {
+        try {
+            log.info("Closing DB connection");
+            connection.close();
+        } catch (SQLException e) {
+            log.error("Error closing DB connection: {}", e.getLocalizedMessage());
         }
     }
 
