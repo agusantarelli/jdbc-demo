@@ -19,6 +19,8 @@ CREATE TABLE movie (
   CONSTRAINT movie_pk PRIMARY KEY (id)
 );
 
+CREATE UNIQUE INDEX movie_title_year_uindex ON movie (title, year);
+
 CREATE TABLE movie_genre (
     movie_id INT NOT NULL,
     genre_id SMALLINT NOT NULL,

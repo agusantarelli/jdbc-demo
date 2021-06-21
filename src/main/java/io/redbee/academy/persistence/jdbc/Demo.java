@@ -47,6 +47,7 @@ public class Demo {
         try {
             log.info("Closing DB connection");
             connection.close();
+            log.info("DB connection closed successfully");
         } catch (SQLException e) {
             log.error("Error closing DB connection: {}", e.getLocalizedMessage());
         }
