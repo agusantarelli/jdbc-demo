@@ -6,7 +6,7 @@ Este proyecto tiene como objetivo demostrar c&oacute;mo realizar consultas a una
 
 - [Pre-requisitos](#pre-requisitos)
     * [Java 11](#java-11)
-    * [MySQL](#mysql)
+    * [Postgres](#postgres)
     * [Lombok Plugin](#lombok-plugin)
 - [Ejecuci&oacute;n](#ejecución)
 - [Contacto](#contacto)
@@ -29,7 +29,7 @@ Una vez identificada la versi&oacute;n a utilizar (Ej: 11.0.3-zulu), ejecutar el
  sdk use java 11.0.3-zulu
  ```
 
-### MySQL
+### Postgres
 
 Por cuestiones pr&aacute;cticas, utilizaremos una imagen de Docker.
 
@@ -39,10 +39,12 @@ Abrir una terminal en la ra&iacute;z del proyecto y ejecutar:
 
 ```bash
 sudo docker run --name movies-db \
-        -e MYSQL_ROOT_PASSWORD=mysql \
-        -v $PWD/jdbc-demo/src/main/resources/sql:/docker-entrypoint-initdb.d/:ro \
-        -p 3306:3306 \
-        --rm -d mysql:8.0.25
+	-e POSTGRES_USER=postgres \
+	-e POSTGRES_PASSWORD=postgres \
+	-e POSTGRES_DB=movies \
+	-v $PWD/src/main/resources/sql:/docker-entrypoint-initdb.d/:ro \
+	-p 5432:5432 \
+	--rm -d postgres:12.7-alpine
 ```
 
 Verificar en los logs del container que este se haya creado correctamente.
