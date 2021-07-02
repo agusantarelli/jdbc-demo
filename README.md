@@ -53,7 +53,14 @@ Ejecutar `sudo docker logs -f movies-db`. Se deber&aacute; encontrar una linea s
 
 ```bash
 ...
-2021-06-20T21:05:48.247618Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.25'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+PostgreSQL init process complete; ready for start up.
+
+2021-07-02 17:22:23.573 UTC [1] LOG:  starting PostgreSQL 12.7 on x86_64-pc-linux-musl, compiled by gcc (Alpine 10.3.1_git20210424) 10.3.1 20210424, 64-bit
+2021-07-02 17:22:23.573 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2021-07-02 17:22:23.573 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+2021-07-02 17:22:23.589 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2021-07-02 17:22:23.631 UTC [48] LOG:  database system was shut down at 2021-07-02 17:22:23 UTC
+2021-07-02 17:22:23.640 UTC [1] LOG:  database system is ready to accept connections
 ```
 
 ### Lombok Plugin
