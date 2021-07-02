@@ -13,9 +13,9 @@ public class Demo {
 
     public static final String APP_CREATION_USER = "jdbc-demo-app";
 
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/movies";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "mysql";
+    private static final String DB_URL = "jdbc:postgresql://localhost:5432/movies";
+    private static final String DB_USER = "postgres";
+    private static final String DB_PASSWORD = "postgres";
 
     public static void main(String[] args) {
         getConnection().ifPresent(connection -> {

@@ -24,8 +24,8 @@ public class RollbackTransaction {
 
         final int nonExistentGenreId = 10000;
 
-        final String sqlInsertMovie = "INSERT INTO movies.movie(`title`, `year`, `creation_user`) VALUES(?, ?, ?);";
-        final String sqlInsertRelation = "INSERT INTO movies.movie_genre(`movie_id`, `genre_id`) VALUES (?, ?)";
+        final String sqlInsertMovie = "INSERT INTO movie(title, year, creation_user) VALUES(?, ?, ?);";
+        final String sqlInsertRelation = "INSERT INTO movie_genre(movie_id, genre_id) VALUES (?, ?)";
 
         PreparedStatement insertMovie = null;
         PreparedStatement insertRelation = null;

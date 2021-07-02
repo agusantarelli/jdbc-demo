@@ -24,11 +24,9 @@ public class SuccessfulTransaction {
 
         final String genreDescription = "History";
 
-        final String sqlInsertMovie = "INSERT INTO movies.movie(`title`, `year`, `creation_user`) VALUES(?, ?, ?);";
-
-        final String sqlInsertGenre = "INSERT INTO movies.genre(`description`, `creation_user`) VALUES (?, ?);";
-
-        final String sqlInsertRelation = "INSERT INTO movies.movie_genre(`movie_id`, `genre_id`) VALUES (?, ?)";
+        final String sqlInsertMovie = "INSERT INTO movie(title, year, creation_user) VALUES(?, ?, ?);";
+        final String sqlInsertGenre = "INSERT INTO genre(description, creation_user) VALUES (?, ?);";
+        final String sqlInsertRelation = "INSERT INTO movie_genre(movie_id, genre_id) VALUES (?, ?)";
 
         PreparedStatement insertMovie = null;
         PreparedStatement insertGenre = null;

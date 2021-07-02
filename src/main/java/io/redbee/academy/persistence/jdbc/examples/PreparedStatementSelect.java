@@ -15,9 +15,9 @@ public class PreparedStatementSelect {
     private final Connection connection;
 
     public void execute() {
-        final String query = "SELECT `id`, `title`, `year`, `creation_user` FROM movie " +
-                "WHERE `year` BETWEEN ? AND ? " +
-                "ORDER BY `year`;";
+        final String query = "SELECT id, title, year, creation_user FROM movie " +
+                "WHERE year BETWEEN ? AND ? " +
+                "ORDER BY year;";
 
         final int firstParam = 1990;
         final int secondParam = 2000;

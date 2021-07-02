@@ -13,7 +13,7 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.25'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.12'
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.0.13'
 

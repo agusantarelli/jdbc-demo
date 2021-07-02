@@ -15,7 +15,7 @@ public class RawSelect {
     private final Connection connection;
 
     public void execute() {
-        final String query = "SELECT `id`, `description`, `creation_user` FROM genre;";
+        final String query = "SELECT id, description, creation_user FROM genre;";
 
         log.info("Executing raw query: {}", query);
 

@@ -14,7 +14,7 @@ public class PreparedStatementInsert {
     private final Connection connection;
 
     public void execute() {
-        final String query = "INSERT INTO movie(`title`, `year`, `creation_user`) VALUES (?, ?, ?);";
+        final String query = "INSERT INTO movie(title, year, creation_user) VALUES (?, ?, ?);";
 
         final String title = "Se7en";
         final int year = 1995;
