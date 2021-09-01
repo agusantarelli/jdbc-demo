@@ -1,5 +1,6 @@
 package io.redbee.academy.persistence.jdbc.examples;
 
+import io.redbee.academy.persistence.jdbc.examples.model.Genre;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,8 +30,8 @@ public class RawSelect {
                 final Integer id = resultSet.getInt("id");
                 final String description = resultSet.getString("description");
                 final String creation_user = resultSet.getString("creation_user");
-
-                log.info("\t id: {}, description: {}, creation_user: {}", id, description, creation_user);
+                final Genre genre = new Genre(id,description,creation_user);
+                log.info("\t Generos obtenidos: {}", genre.toString());
             }
 
             resultSet.close();
